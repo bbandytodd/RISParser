@@ -6,7 +6,8 @@
     using System.Text;
     
     /// <summary>
-    /// TODO: Update summary.
+    /// BaseRISPublication is a basic implementation of the fields held within a RIS file.
+    /// You can derive your own classes from this if you wish to extend the format.
     /// </summary>
     public class BaseRISPublication : IRISPublication
     {
@@ -45,6 +46,9 @@
         private string _numberOfVolumes;
         private string _originalPublication;
 
+        /// <summary>
+        /// Creates a new RIS Publication object
+        /// </summary>
         public BaseRISPublication()
         {
             _authors = new List<Person>();

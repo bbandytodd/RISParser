@@ -1,9 +1,4 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="Pers.cs" company="Microsoft">
-// TODO: Update copyright text.
-// </copyright>
-// -----------------------------------------------------------------------
-
+﻿
 namespace RISParser.Model
 {
     using System;
@@ -11,15 +6,23 @@ namespace RISParser.Model
     using System.Linq;
     using System.Text;
 
-
+    /// <summary>
+    /// A simple Person object
+    /// </summary>
     public class Person
     {
+        /// <summary>
+        /// The person's first name (or initials if the RIS file contains an entry such as 'Jones,A.B'
+        /// </summary>
         public string FirstName
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// The person's last name
+        /// </summary>
         public string LastName
         {
             get;

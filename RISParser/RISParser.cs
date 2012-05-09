@@ -11,12 +11,22 @@ using RISParser.Model;
 
 namespace RISParser
 {
+    /// <summary>
+    /// RISParser is a library for parsing RIS data files (http://en.wikipedia.org/wiki/RIS_(file_format)) in .NET.
+    /// It will parse a RIS file and return a List of IRISPublication objects representating the parsed data.
+    /// 
+    /// Author: Andy Todd
+    /// Date: 9/05/2012
+    /// </summary>
     public class RISParser
     {
 
         private XmlDocument _xmlDoc = null;
         protected string[] _manualFields = new string[] {"KW","TY","AU" };
 
+        /// <summary>
+        /// Creates a new instance of the RISParser
+        /// </summary>
         public RISParser()
         {
             //--the mappings xmldocument tells the app how to map RIS fields onto the model
@@ -29,7 +39,7 @@ namespace RISParser
         }
 
         /// <summary>
-        /// Parses the RIS file at the specified path and returns a RISPublication object
+        /// Parses the RIS file at the specified path and returns a list of IRISPublication objects representing the publications held within the RIS file
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
