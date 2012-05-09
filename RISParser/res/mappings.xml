@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mappings>
+  <mapping source="TY" destination="PublicationType" type="RISType"/>
+  <mapping source="AB" destination="Abstract" type="string"/>
+  <mapping source="AN" destination="AccessionNumber" type="string"/>
+  <mapping source="AD" destination="AuthorAddress" type="string"/>
+  <mapping source="AU" destination="Authors" type="Person"/>
+  <mapping source="C1" destination="Custom1" type="string"/>
+  <mapping source="C2" destination="Custom2" type="string"/>
+  <mapping source="C3" destination="Custom3" type="string"/>
+  <mapping source="C4" destination="Custom4" type="string"/>
+  <mapping source="C5" destination="Custom5" type="string"/>
+  <mapping source="C6" destination="Custom6" type="string"/>
+  <mapping source="C7" destination="Custom7" type="string"/>
+  <mapping source="C8" destination="Custom8" type="string"/>
+  <mapping source="CA" destination="Caption" type="string"/>
+  <mapping source="CN" destination="CallNumber" type="string"/>
+  <mapping source="CY" destination="PlacePublished" type="string"/>
+  <mapping source="DA" destination="Date" type="datetime"/>
+  <mapping source="DB" destination="NameOfDatabase" type="string"/>
+  <mapping source="DO" destination="DOI" type="string"/>
+  <mapping source="DP" destination="DatabaseProvider" type="string"/>
+  <mapping source="ET" destination="Edition" type="string"/>
+  <mapping source="J2" destination="AlternateTitle" type="string"/>
+  <mapping source="L4" destination="Figure" type="string"/>
+  <mapping source="LB" destination="Label" type="string"/>
+  <mapping source="IS" destination="Number" type="string"/>
+  <mapping source="M3" destination="TypeOfWork" type="string"/>
+  <mapping source="N1" destination="Notes" type="string"/>
+  <mapping source="NV" destination="NumberOfVolumes" type="string"/>
+  <mapping source="OP" destination="OriginalPublication" type="string"/>
+  <mapping source="PB" destination="Publisher" type="string"/>
+  <mapping source="PY" destination="Year" type="string"/>
+</mappings>

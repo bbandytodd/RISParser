@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.IO;
+using System.Reflection;
+using System.Xml;
 
 using RISParser.Model;
 
@@ -11,6 +13,19 @@ namespace RISParser
 {
     public class RISParser
     {
+
+        private XmlDocument _xmlDoc = null;
+
+        public RISParser()
+        {
+            //--the mappings xmldocument tells the app how to map RIS fields onto the model
+            _xmlDoc = new XmlDocument();
+            using(Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream("RISParser.res.mappings.xml"))
+            using (StreamReader reader = new StreamReader(s))
+            {
+                _xmlDoc.LoadXml(reader.ReadToEnd());
+            }
+        }
 
         /// <summary>
         /// Parses the RIS file at the specified path and returns a RISPublication object
@@ -99,23 +114,52 @@ namespace RISParser
             string fieldCode = fieldArray[0];
             string fieldValue = fieldArray[1];
 
-            //--now that we have the field code and its value, we need to parse the field code to understand what it is
-            switch (fieldCode)
+            XmlNode mappingNode = _xmlDoc.SelectSingleNode("mappings/mapping[@source='" + fieldCode + "']");
+            if (mappingNode != null)
             {
-                case "TY" :
-                    pub.PublicationType = (RISType) Enum.Parse(typeof(RISType), fieldValue);
-                    break;
-                case "TI" :
-                    pub.Title = fieldValue;
-                    break;
-                case "AU":
-                    //--there may be multiple authors...
-                    Person author = ParsePerson(fieldValue);
-                    if (author != null)
+                string destination = mappingNode.SelectSingleNode("@destination").InnerText;
+                string destType = mappingNode.SelectSingleNode("@type").InnerText;
+
+                //--set single valued types easily
+                if (destType == "string" && fieldCode!="TY")
+                {
+                    typeof(IRISPublication).GetProperty(destination).SetValue(pub, fieldValue, null);
+                }
+                else if (destType == "datetime")
+                {
+                    DateTime date = DateTime.Now;
+                    try
                     {
-                        pub.Authors.Add(author);
+                        DateTime.TryParse(fieldValue, out date);
+                        typeof(IRISPublication).GetProperty(destination).SetValue(pub, date, null);
                     }
-                    break;
+                    catch (Exception ex)
+                    {
+                        //TODO Log date errors
+                    }
+                }
+                else {
+                    //--set multi valued types manually (authors and type)
+                    switch (fieldCode)
+                    {
+                        case "TY":
+                            pub.PublicationType = (RISType)Enum.Parse(typeof(RISType), fieldValue);
+                            break;
+                        case "AU":
+                            //--there may be multiple authors...
+                            Person author = ParsePerson(fieldValue);
+                            if (author != null)
+                            {
+                                pub.Authors.Add(author);
+                            }
+                            break;
+                    }
+                    
+                }
+            }
+            else
+            {
+                //TODO mapping node null, could not map so log or error
             }
         }
 

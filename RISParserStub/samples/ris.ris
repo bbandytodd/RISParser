@@ -1,4 +1,6 @@
 TY - JOUR 
+AD - This is a test address
+DA - 05/06/2011
 AU - Baldwin,S.A. 
 AU - Fugaccia,I. 
 AU - Brown,D.R. 
@@ -7,7 +9,7 @@ AU - Scheff,S.W.
 TI - Blood-brain barrier breach following cortical contusion in the rat 
 T2 - Journal of Neurosurgery 
 PY - 1996 
-VL -85 
+VL - 85 
 IS - 4 
 SP - 476-481 
 SN - 0022-3085 
@@ -18,7 +20,7 @@ KW - cortical contusion
 KW - blood-brain barrier 
 KW - horseradish peroxidase 
 KW - hippocampus 
-KW -rat 
+KW - rat 
 DO - DOI:10xxxxxxxx 
 ER -
 
@@ -29,7 +31,7 @@ PY - 1999
 CY - Chicago 
 PB - Parity Press 
 SP - 144 
-VL -2nd 
+VL - 2nd 
 KW - Epidemiology 
 KW - U.S. Gov't 
 DO - DOI: 10.xxxxxxxxx 
