@@ -45,6 +45,13 @@
         private string _numberOfVolumes;
         private string _originalPublication;
 
+        public BaseRISPublication()
+        {
+            _authors = new List<Person>();
+            _keywords = new List<string>();
+        }
+
+
         public string AccessionNumber
         {
             get { return _accessionNumber; }
@@ -216,11 +223,6 @@
         {
             get { return _year; }
             set { _year = value; }
-        }
-
-        public BaseRISPublication()
-        {
-            _authors = new List<Person>();
         }
 
         public RISType PublicationType

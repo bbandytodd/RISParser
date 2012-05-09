@@ -15,6 +15,7 @@ namespace RISParser
     {
 
         private XmlDocument _xmlDoc = null;
+        protected string[] _manualFields = new string[] {"KW","TY","AU" };
 
         public RISParser()
         {
@@ -115,30 +116,35 @@ namespace RISParser
             string fieldValue = fieldArray[1];
 
             XmlNode mappingNode = _xmlDoc.SelectSingleNode("mappings/mapping[@source='" + fieldCode + "']");
-            if (mappingNode != null)
+            if (mappingNode != null || _manualFields.Contains(fieldCode))
             {
-                string destination = mappingNode.SelectSingleNode("@destination").InnerText;
-                string destType = mappingNode.SelectSingleNode("@type").InnerText;
 
                 //--set single valued types easily
-                if (destType == "string" && fieldCode!="TY")
+                if (!_manualFields.Contains(fieldCode))
                 {
-                    typeof(IRISPublication).GetProperty(destination).SetValue(pub, fieldValue, null);
+                    string destination = mappingNode.SelectSingleNode("@destination").InnerText;
+                    string destType = mappingNode.SelectSingleNode("@type").InnerText;
+
+                    if (destType == "string")
+                    {
+                        typeof(IRISPublication).GetProperty(destination).SetValue(pub, fieldValue, null);
+                    }
+                    else if (destType == "datetime")
+                    {
+                        DateTime date = DateTime.Now;
+                        try
+                        {
+                            DateTime.TryParse(fieldValue, out date);
+                            typeof(IRISPublication).GetProperty(destination).SetValue(pub, date, null);
+                        }
+                        catch (Exception ex)
+                        {
+                            //TODO Log date errors
+                        }
+                    }
                 }
-                else if (destType == "datetime")
+                else 
                 {
-                    DateTime date = DateTime.Now;
-                    try
-                    {
-                        DateTime.TryParse(fieldValue, out date);
-                        typeof(IRISPublication).GetProperty(destination).SetValue(pub, date, null);
-                    }
-                    catch (Exception ex)
-                    {
-                        //TODO Log date errors
-                    }
-                }
-                else {
                     //--set multi valued types manually (authors and type)
                     switch (fieldCode)
                     {
@@ -152,6 +158,9 @@ namespace RISParser
                             {
                                 pub.Authors.Add(author);
                             }
+                            break;
+                        case "KW":
+                            pub.Keywords.Add(fieldValue);
                             break;
                     }
                     
