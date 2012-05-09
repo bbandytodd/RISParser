@@ -17,7 +17,6 @@ namespace RISParserStub
         {
             RISParser.RISParser parser = new RISParser.RISParser();
             parser.ParseRISDocument(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\..\..\samples\ris.ris");
-
         }
     }
 }
