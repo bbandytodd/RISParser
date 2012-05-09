@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RISParser", "RISParser\RISP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RISParserStub", "RISParserStub\RISParserStub.csproj", "{3DEC2B7C-6625-421D-B34B-93B0BAE4C0C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RISParserTests", "..\RISParserTests\RISParserTests.csproj", "{5EA72CC5-5305-47F2-B546-AFF4A817587A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RISParserTests", "RISParserTests\RISParserTests.csproj", "{AC6A44DE-BE96-42E9-9337-BB6DB49D245E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,16 +37,16 @@ Global
 		{3DEC2B7C-6625-421D-B34B-93B0BAE4C0C4}.Release|Mixed Platforms.Build.0 = Release|x86
 		{3DEC2B7C-6625-421D-B34B-93B0BAE4C0C4}.Release|x86.ActiveCfg = Release|x86
 		{3DEC2B7C-6625-421D-B34B-93B0BAE4C0C4}.Release|x86.Build.0 = Release|x86
-		{5EA72CC5-5305-47F2-B546-AFF4A817587A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5EA72CC5-5305-47F2-B546-AFF4A817587A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5EA72CC5-5305-47F2-B546-AFF4A817587A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{5EA72CC5-5305-47F2-B546-AFF4A817587A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{5EA72CC5-5305-47F2-B546-AFF4A817587A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5EA72CC5-5305-47F2-B546-AFF4A817587A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5EA72CC5-5305-47F2-B546-AFF4A817587A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5EA72CC5-5305-47F2-B546-AFF4A817587A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{5EA72CC5-5305-47F2-B546-AFF4A817587A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{5EA72CC5-5305-47F2-B546-AFF4A817587A}.Release|x86.ActiveCfg = Release|Any CPU
+		{AC6A44DE-BE96-42E9-9337-BB6DB49D245E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC6A44DE-BE96-42E9-9337-BB6DB49D245E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC6A44DE-BE96-42E9-9337-BB6DB49D245E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AC6A44DE-BE96-42E9-9337-BB6DB49D245E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AC6A44DE-BE96-42E9-9337-BB6DB49D245E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AC6A44DE-BE96-42E9-9337-BB6DB49D245E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC6A44DE-BE96-42E9-9337-BB6DB49D245E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC6A44DE-BE96-42E9-9337-BB6DB49D245E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AC6A44DE-BE96-42E9-9337-BB6DB49D245E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AC6A44DE-BE96-42E9-9337-BB6DB49D245E}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
