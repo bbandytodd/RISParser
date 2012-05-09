@@ -99,7 +99,6 @@ namespace RISParser
             string[] fields = Regex.Split(markup, "\r\n");
             foreach(string field in fields) 
             {
-                Console.WriteLine(field);
                 //--each field is formatted FC - FV where FC is a field code and FV is the value
                 string[] fieldArray = Regex.Split(field, " - ");
                 if (fieldArray.Count() == 2)
@@ -109,6 +108,7 @@ namespace RISParser
                 else
                 {
                     //TODO invalid or empty field, should probably log this
+#warning Empty else block
                 }
             }
 
@@ -150,6 +150,7 @@ namespace RISParser
                         catch (Exception ex)
                         {
                             //TODO Log date errors
+#warning Empty catch statement
                         }
                     }
                 }
@@ -179,6 +180,7 @@ namespace RISParser
             else
             {
                 //TODO mapping node null, could not map so log or error
+#warning Empty else block
             }
         }
 
@@ -215,9 +217,4 @@ namespace RISParser
 
 
     }
-
-
-    
-
-    
 }
