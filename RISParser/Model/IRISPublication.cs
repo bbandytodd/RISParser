@@ -43,6 +43,19 @@
         string OriginalPublication { get; set; }
         string Publisher { get; set; }
         string Year { get; set; }
+        string Url { get; set; }
+        string SecondaryAuthor { get; set; }
+        string TertiaryAuthor { get; set; }
+        string SubsidiaryAuthor { get; set; }
         List<Person> Authors { get; set;}
+
+        string ReviewedItem { get; set; }
+        string ResearchNotes { get; set; }
+        string ReprintEdition { get; set; }
+        string Section { get; set; }
+        string ISBNISSN { get; set; }
+        string Pages { get; set; }
+        string ShortTitle { get; set; }
+
     }
 }

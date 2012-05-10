@@ -45,6 +45,21 @@
         private string _publisher;
         private string _numberOfVolumes;
         private string _originalPublication;
+        private string _url;
+        private string _secondaryAuthor;
+        private string _tertiaryAuthor;
+        private string _subsidiaryAuthor;
+        private string _reviewedItem;
+        private string _researchNotes;
+        private string _reprintEdition;
+        private string _section;
+        private string _isbnissn;
+        private string _pages;
+        private string _shortTitle;
+
+                       
+
+                    
 
         /// <summary>
         /// Creates a new RIS Publication object
@@ -55,6 +70,65 @@
             _keywords = new List<string>();
         }
 
+        public string ShortTitle
+        {
+            get { return _shortTitle; }
+            set { _shortTitle = value; }
+        }
+
+        public string Pages
+        {
+            get { return _pages; }
+            set { _pages = value; }
+        }
+
+        public string ISBNISSN
+        {
+            get { return _isbnissn; }
+            set { _isbnissn = value; }
+        }
+
+        public string Section
+        {
+            get { return _section; }
+            set { _section = value; }
+        }
+
+        public string ReprintEdition
+        {
+            get { return _reprintEdition; }
+            set { _reprintEdition = value; }
+        }
+
+        public string ResearchNotes
+        {
+            get { return _researchNotes; }
+            set { _researchNotes = value; }
+        }
+
+        public string ReviewedItem
+        {
+            get { return _reviewedItem; }
+            set { _reviewedItem = value; }
+        }
+
+        public string SecondaryAuthor
+        {
+            get { return _secondaryAuthor; }
+            set { _secondaryAuthor = value; }
+        }
+
+        public string TertiaryAuthor
+        {
+            get { return _tertiaryAuthor; }
+            set { _tertiaryAuthor = value; }
+        }
+
+        public string SubsidiaryAuthor
+        {
+            get { return _subsidiaryAuthor; }
+            set { _subsidiaryAuthor = value; }
+        }
 
         public string AccessionNumber
         {
@@ -257,6 +331,12 @@
         {
             get { return _authorAddress; }
             set { _authorAddress = value; }
+        }
+
+        public string Url
+        {
+            get { return _url; }
+            set { _url = value; }
         }
     }
 }

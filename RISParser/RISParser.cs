@@ -22,7 +22,10 @@ namespace RISParser
     {
 
         private XmlDocument _xmlDoc = null;
+        //--these fields are currently manually parsed (as opposed to using reflection)
         protected string[] _manualFields = new string[] {"KW","TY","AU" };
+        //--these fields may contain multiple elements in a series, e.g. AU followed by A1, A2 etc.
+        protected string[] _seriesTypes = new string[] {"AU" };
 
         /// <summary>
         /// Creates a new instance of the RISParser

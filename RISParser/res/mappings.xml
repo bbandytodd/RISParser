@@ -31,4 +31,15 @@
   <mapping source="OP" destination="OriginalPublication" type="string"/>
   <mapping source="PB" destination="Publisher" type="string"/>
   <mapping source="PY" destination="Year" type="string"/>
+  <mapping source="UR" destination="Url" type="string"/>
+  <mapping source="A2" destination="SecondaryAuthor" type="string"/>
+  <mapping source="A3" destination="TertiaryAuthor" type="string"/>
+  <mapping source="A4" destination="SubsidiaryAuthor" type="string"/>
+  <mapping source="RI" destination="ReviewedItem" type="string"/>
+  <mapping source="RN" destination="ResearchNotes" type="string"/>
+  <mapping source="RP" destination="ReprintEdition" type="string"/>
+  <mapping source="SE" destination="Section" type="string"/>
+  <mapping source="SN" destination="ISBNISSN" type="string"/>
+  <mapping source="SP" destination="Pages" type="string"/>
+  <mapping source="ST" destination="ShortTitle" type="string"/>
 </mappings>
